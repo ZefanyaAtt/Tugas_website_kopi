@@ -28,26 +28,65 @@ document.addEventListener("click", function (e) {
   }
 });
 
-// Modal Box
-const itemDetailModal = document.querySelector("#item-detail-modal");
-const itemDetailButtons = document.querySelectorAll(".item-detail-button");
+// Modal Box 1
+const itemDetailModal1 = document.querySelector("#item-detail-modal1");
+const itemDetailButtons1 = document.querySelectorAll(".item-detail-button1");
 
-itemDetailButtons.forEach((btn) => {
+itemDetailButtons1.forEach((btn) => {
   btn.onclick = (e) => {
-    itemDetailModal.style.display = "flex";
     e.preventDefault();
+    itemDetailModal1.style.display = "flex";
   };
 });
 
+const itemDetailModal2 = document.querySelector("#item-detail-modal2");
+const itemDetailButtons2 = document.querySelectorAll(".item-detail-button2");
+
+itemDetailButtons2.forEach((btn) => {
+  btn.onclick = (e) => {
+    e.preventDefault();
+    itemDetailModal2.style.display = "flex";
+  };
+});
+
+const itemDetailModal3 = document.querySelector("#item-detail-modal3");
+const itemDetailButtons3 = document.querySelectorAll(".item-detail-button3");
+
+itemDetailButtons3.forEach((btn) => {
+  btn.onclick = (e) => {
+    e.preventDefault();
+    itemDetailModal3.style.display = "flex";
+  };
+});
+
+const itemDetailModal4 = document.querySelector("#item-detail-modal4");
+const itemDetailButtons4 = document.querySelectorAll(".item-detail-button4");
+
+itemDetailButtons4.forEach((btn) => {
+  btn.onclick = (e) => {
+    e.preventDefault();
+    itemDetailModal4.style.display = "flex";
+  };
+});
 // Klik tombol close
-document.querySelector(".modal .close-icon").onclick = (e) => {
-  itemDetailModal.style.display = "none";
-  e.preventDefault();
-};
+const closeButtons = document.querySelectorAll(".modal .close-icon");
+
+closeButtons.forEach((closeButton) => {
+  closeButton.onclick = (e) => {
+    e.preventDefault();
+
+    const modal = closeButton.closest(".modal");
+    modal.style.display = "none";
+  };
+});
 
 // Klik di luar modal
-window.onclick = (e) => {
-  if (e.target === itemDetailModal) {
-    itemDetailModal.style.display = "none";
-  }
-};
+const modals = document.querySelectorAll(".modal");
+
+modals.forEach((modal) => {
+  modal.onclick = (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+});
